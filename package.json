@@ -1,0 +1,8 @@
+{
+  "name": "dbdev-bin",
+  "type": "module",
+  "packageManager": "yarn@4.10.3",
+  "bin": {
+    "dbdev": "./bin/dbdev"
+  }
+}
