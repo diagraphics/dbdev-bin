@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { existsSync, symlinkSync, renameSync, unlinkSync } from 'fs';
+import { existsSync, symlinkSync, renameSync, unlinkSync, chmodSync } from 'fs';
 import { platform, arch } from 'process';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -17,6 +17,9 @@ if (!existsSync(binaryPath)) {
   console.error(`Expected binary at: ${binaryPath}`);
   process.exit(1);
 }
+
+// Ensure the binary is executable (git doesn't preserve execute bits reliably)
+chmodSync(binaryPath, 0o755);
 
 try {
   // Create temporary symlink
