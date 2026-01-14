@@ -6,6 +6,13 @@
     "dbdev": "./bin/dbdev"
   },
   "scripts": {
-    "postinstall": "node postinstall.js"
+    "postinstall": "node postinstall.js",
+    "build": "./build.sh all",
+    "build:darwin-x64": "./build.sh darwin-x64",
+    "build:darwin-arm64": "./build.sh darwin-arm64",
+    "build:linux-x64": "./build.sh linux-x64",
+    "build:linux-arm64": "./build.sh linux-arm64",
+    "clean": "./build.sh clean",
+    "clean:all": "./build.sh clean-all"
   }
 }
